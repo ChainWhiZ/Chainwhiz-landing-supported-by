@@ -1,10 +1,14 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
+
+:root {
+  --supportSectionColor: #131313;
+  --yellow: #d7ff2e;
+  --light: #ffffff;
+  --hoverCard: #232323;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App {
+  text-align: center;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -14,25 +18,160 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: var(--supportSectionColor);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-around;
+  font-family: "Poppins", sans-serif;
+  color: var(--light);
+}
+
+.text-yellow {
+  color: var(--yellow);
+}
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+span.row > h3 {
+  letter-spacing: 0.01em;
+  font-size: 2.75rem;
+  line-height: 2rem;
+  font-weight: 700;
+}
+#read {
+  display: block;
+  text-decoration: none;
+  padding: 1rem 2.5rem;
+  border-radius: 4rem;
+  border: 1px solid transparent;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s;
+}
+#read:hover {
+  border: 1px solid var(--yellow);
+}
+#read svg {
+  transform: rotate(-90deg);
+  fill: var(--yellow);
+  text-align: center;
+  height: 1rem;
+  transition: 0.05s;
 }
 
-.App-link {
-  color: #61dafb;
+#read:hover svg {
+  transform: rotate(90deg);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.support_card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.support_card > svg:first-child {
+  height: 4rem;
+}
+
+.support_card > *:nth-child(2) {
+  height: 4rem;
+  margin: 1.75rem 0 2rem;
+}
+
+.support_card:last-child > *:nth-child(2) {
+  height: 3.5rem;
+}
+.support_card p {
+  max-width: 22rem;
+  margin: auto;
+}
+
+#cheerleaders {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+
+#cheerleaders > div {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+}
+
+#cheerleaders > div > div {
+  grid-row: 1/2;
+  grid-column: 1/2;
+}
+
+#cheerleaders > div > div > h5 {
+  color: var(--yellow);
+  font-weight: 500;
+}
+
+#cheerleaders > div > div:last-child {
+  max-width: 23rem;
+  text-align: left;
+  background-color: var(--hoverCard);
+  border-radius: 0.5rem;
+  padding: 2rem;
+  z-index: -1;
+}
+
+.hide{
+  order: 3;
+  z-index: 3 !important;
+}
+.animate_left{
+  animation: animate-left 0.3s ease-in 1ms;
+  position: relative;
+}
+.animate_right{
+  animation: animate-right 0.3s ease-in 1ms;
+  position: relative;
+}
+
+@keyframes animate-left {
+  0% {
+    right: -60px;
+    opacity: 0.9;
+    z-index: 3 
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    right: -30px;
+    opacity: 1;
+    z-index: 3 
+  }
+  100% {
+    opacity: 1;
+    right: 0px;
+    z-index: 3 
+  }
+}
+
+@keyframes animate-right {
+  0% {
+    left: -60px;
+    opacity: 0.9;
+    z-index: 3 
+  }
+  50% {
+    left: -30px;
+    opacity: 1;
+    z-index: 3 
+  }
+  100% {
+    opacity: 1;
+    left: 0px;
+    z-index: 3 
   }
 }
