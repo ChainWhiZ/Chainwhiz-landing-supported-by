@@ -185,3 +185,27 @@ span.row > h3 {
     z-index: 3 
   }
 }
+
+
+@media (max-width: 700px) {
+  span.row{
+    display: block;
+  }
+  span.row>h3:first-child{
+    margin-bottom: 1rem;
+    padding-bottom: 0;
+  }
+  span.row>h3:last-child{
+    margin-top : 1rem;
+  }
+
+  #cheerleaders{
+    display: block;
+  }
+  #cheerleaders>div{
+    margin: 2rem 0;
+  }
+  .hide{
+    margin: auto;
+  }
+}
