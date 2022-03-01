@@ -1,38 +1,104 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+* {
+  font-family: 'Poppins';
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+  --bg-primary: #131313;
+  --green: #d7ff2e;
+  --light: #ffffff;
+  --bg-card-primary: #232323;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#text-green {
+  color: var(--green);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#support-container {
+  width: 100%;
+  height: 100vh;
+  background: var(--bg-primary);
+}
+
+#button-container {
+  width: 100%;
+  display: flex;
+}
+
+#article-button {
+  margin: 40px auto;
+  padding: 10px 15px;
+  color: var(--green);
+  font-weight: 800;
+  border-radius: 30px;
+}
+
+#container {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  background: var(--bg-primary);
 }
 
-.App-link {
-  color: #61dafb;
+#question {
+  font-size: 14;
+  color: var(--green);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+#hover-container {
+  background: var(--bg-card-primary);
+  padding: 3%;
+  animation: hover-container 0.3s ease-in 2ms;
+  position: relative;
+}
+
+@media (min-width: 920px) {
+  #hover-container {
+    margin: 0 20%;
+    height: 85%;
   }
-  to {
-    transform: rotate(360deg);
+}
+#card-image {
+  object-fit: contain;
+  height: 15rem;
+  width: 15rem;
+}
+#description {
+  width: 70%;
+  text-align: center;
+  margin: auto;
+}
+@media (max-width: 720px) {
+  #description {
+    width: 80%;
+  }
+}
+#hover-description {
+  line-height: 25px;
+  font-weight: 400;
+}
+
+#animate_right {
+  animation: animate-right 0.3s ease-in 1ms;
+  position: relative;
+}
+
+@keyframes hover-container {
+  0% {
+    right: -80px;
+    opacity: 0.9;
+    z-index: 3;
+  }
+  50% {
+    right: -40px;
+    opacity: 1;
+    z-index: 3;
+  }
+  100% {
+    opacity: 1;
+    right: 0px;
+    z-index: 3;
   }
 }

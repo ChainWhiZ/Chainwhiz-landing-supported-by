@@ -3,13 +3,13 @@ import React from 'react'
 
 const SupportCard = ({ item, changeHoverState, hovered }) => {
   return hovered ? (
-    <Card sx={styles.hoverContainer}>
+    <Card id='hover-container'>
       <CardContent>
-        <Typography sx={styles.question} color='text.secondary' gutterBottom>
+        <Typography id='question' color='text.secondary' gutterBottom>
           {item !== 'Near' && 'What is NEAR?'}
           {item !== 'Polygon' && 'What is Polygon?'}
         </Typography>
-        <Typography variant='body1' sx={styles.hoverDescription}>
+        <Typography variant='body1' id='hover-description'>
           {item !== 'Near' &&
             'Through simple, secure, and scalable technology, NEAR empowers millions to invent and explore new experiences. Business, creativity, and community are being reimagined for a more sustainable and inclusive future.'}
           {item !== 'Polygon' &&
@@ -18,17 +18,17 @@ const SupportCard = ({ item, changeHoverState, hovered }) => {
       </CardContent>
     </Card>
   ) : (
-    <Card elevation={0} sx={styles.container}>
+    <Card elevation={0} id='container'>
       <CardMedia
         onMouseEnter={() => changeHoverState(true)}
         onMouseLeave={() => changeHoverState(false)}
         component='img'
         image={`./${item}.png`}
         alt={item}
-        sx={styles.image}
+        id='card-image'
       />
       <CardContent>
-        <Typography variant='body2' color='text.secondary' sx={styles.description}>
+        <Typography variant='body2' color='text.secondary' id='description'>
           {item === 'Near' && 'Awarded a grant from NEAR Protocol to build Chainwhiz on NEAR chain'}
           {item === 'Polygon' &&
             'Awarded a grant from the Polygon Team to help build Chainwhiz on Polygon Mainnet'}
@@ -37,31 +37,5 @@ const SupportCard = ({ item, changeHoverState, hovered }) => {
     </Card>
   )
 }
-const styles = {
-  container: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-    background: '#131313'
-  },
-  question: { fontSize: 14, color: '#D7FF2E' },
-  hoverContainer: {
-    padding: '3%',
-    '@media screen and (min-width:920px)': {
-      marginX: '20%',
-      height: '85%'
-    }
-  },
-  image: { objectFit: 'contain', height: '15rem', width: '15rem' },
-  description: {
-    width: '70%',
-    textAlign: 'center',
-    margin: 'auto',
-    '@media screen and (max-width:720px)': {
-      width: '80%'
-    }
-  },
-  hoverDescription: { lineHeight: '25px', fontWeight: 400 }
-}
+
 export default SupportCard
