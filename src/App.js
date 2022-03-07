@@ -1,4 +1,4 @@
-import SupportSection from "./components/SupportSection";
+import SupportSection from "./components/SupportBy/SupportSection";
 import "./App.css";
 
 function App() {
